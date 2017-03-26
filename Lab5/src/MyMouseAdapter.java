@@ -54,7 +54,26 @@ public class MyMouseAdapter extends MouseAdapter {
 			myPanel.repaint();
 			break;
 		case 3:        //Right mouse button
-			//Do nothing
+			Component r = e.getComponent();
+			while (!(r instanceof JFrame)) {
+				r = r.getParent();
+				if (r == null) {
+					return;
+				}
+			}
+			JFrame myFrameR = (JFrame) r;
+			MyPanel myPanelR = (MyPanel) myFrameR.getContentPane().getComponent(0);
+			Insets myInsetsR = myFrameR.getInsets();
+			int x1R = myInsetsR.left;
+			int y1R = myInsetsR.top;
+			e.translatePoint(-x1R, -y1R);
+			int xR = e.getX();
+			int yR = e.getY();
+			myPanelR.x = xR;
+			myPanelR.y = yR;
+			myPanelR.mouseDownGridX = myPanelR.getGridX(xR, yR);
+			myPanelR.mouseDownGridY = myPanelR.getGridY(xR, yR);
+			myPanelR.repaint();	
 			break;
 		default:    //Some other button (2 = Middle mouse button, etc.)
 			//Do nothing
@@ -104,37 +123,60 @@ public class MyMouseAdapter extends MouseAdapter {
 
 						}else {
 							if (mine1 || mine2 || mine3 || mine4 || mine5 || mine6 || mine7 || mine8 || mine9 || mine10){
-								myPanel.colorArray[m1x][m1y] = Color.RED;
-								myPanel.colorArray[m2x][m2y] = Color.RED;
-								myPanel.colorArray[m3x][m3y] = Color.RED;
-								myPanel.colorArray[m4x][m4y] = Color.RED;
-								myPanel.colorArray[m5x][m5y] = Color.RED;
-								myPanel.colorArray[m6x][m6y] = Color.RED;
-								myPanel.colorArray[m7x][m7y] = Color.RED;
-								myPanel.colorArray[m8x][m8y] = Color.RED;
-								myPanel.colorArray[m9x][m9y] = Color.RED;
-								myPanel.colorArray[m10x][m10y] = Color.RED;
+								myPanel.colorArray[m1x][m1y] = Color.BLACK;
+								myPanel.colorArray[m2x][m2y] = Color.BLACK;
+								myPanel.colorArray[m3x][m3y] = Color.BLACK;
+								myPanel.colorArray[m4x][m4y] = Color.BLACK;
+								myPanel.colorArray[m5x][m5y] = Color.BLACK;
+								myPanel.colorArray[m6x][m6y] = Color.BLACK;
+								myPanel.colorArray[m7x][m7y] = Color.BLACK;
+								myPanel.colorArray[m8x][m8y] = Color.BLACK;
+								myPanel.colorArray[m9x][m9y] = Color.BLACK;
+								myPanel.colorArray[m10x][m10y] = Color.BLACK;
+
 
 								myPanel.repaint();
 								System.out.println("GAME OVER!!");
-//							}else{
-//								if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY].equals(Color.RED)){
+								//							}else{
+								//								if(myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY].equals(Color.RED)){
 
-								} else {
+							} else {
 
-									myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.GRAY;
-									myPanel.repaint();
-								}
-
+								myPanel.colorArray[myPanel.mouseDownGridX][myPanel.mouseDownGridY] = Color.GRAY;
+								myPanel.repaint();
 							}
+
 						}
 					}
 				}
-//			}
+			}
+			//			}
 			myPanel.repaint();
 			break;
 		case 3:        //Right mouse button
-			//Do nothing
+			Component r = e.getComponent();
+			while (!(r instanceof JFrame)) {
+				r = r.getParent();
+				if (r == null) {
+					return;
+				}
+			}
+			JFrame myFrameR = (JFrame) r;
+			MyPanel myPanelR = (MyPanel) myFrameR.getContentPane().getComponent(0);
+			Insets myInsetsR = myFrameR.getInsets();
+			int x1R = myInsetsR.left;
+			int y1R = myInsetsR.top;
+			e.translatePoint(-x1R, -y1R);
+			int xR = e.getX();
+			int yR = e.getY();
+			myPanelR.x = xR;
+			myPanelR.y = yR;
+			myPanelR.mouseDownGridX = myPanelR.getGridX(xR, yR);
+			myPanelR.mouseDownGridY = myPanelR.getGridY(xR, yR);
+			myPanelR.repaint();	
+
+			myPanelR.colorArray[myPanelR.mouseDownGridX][myPanelR.mouseDownGridY] = Color.RED;
+			myPanelR.repaint();
 			break;
 		default:    //Some other button (2 = Middle mouse button, etc.)
 			//Do nothing
