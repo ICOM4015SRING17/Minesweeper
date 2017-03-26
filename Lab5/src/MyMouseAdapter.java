@@ -9,26 +9,26 @@ import javax.swing.JFrame;
 
 public class MyMouseAdapter extends MouseAdapter {
 	private Random generator = new Random();
-	private int m1x = generator.nextInt(10);
-	private int m1y = generator.nextInt(10);
-	private int m2x = generator.nextInt(10);
-	private int m2y = generator.nextInt(10);
-	private int m3x = generator.nextInt(10);
-	private int m3y = generator.nextInt(10);
-	private int m4x = generator.nextInt(10);
-	private int m4y = generator.nextInt(10);
-	private int m5x = generator.nextInt(10);
-	private int m5y = generator.nextInt(10);
-	private int m6x = generator.nextInt(10);
-	private int m6y = generator.nextInt(10);
-	private int m7x = generator.nextInt(10);
-	private int m7y = generator.nextInt(10);
-	private int m8x = generator.nextInt(10);
-	private int m8y = generator.nextInt(10);
-	private int m9x = generator.nextInt(10);
-	private int m9y = generator.nextInt(10);
-	private int m10x = generator.nextInt(10);
-	private int m10y = generator.nextInt(10);
+	private int m1x = generator.nextInt(9) + 1;
+	private int m1y = generator.nextInt(9) + 1;
+	private int m2x = generator.nextInt(9) + 1;
+	private int m2y = generator.nextInt(9) + 1;
+	private int m3x = generator.nextInt(9) + 1;
+	private int m3y = generator.nextInt(9) + 1;
+	private int m4x = generator.nextInt(9) + 1;
+	private int m4y = generator.nextInt(9) + 1;
+	private int m5x = generator.nextInt(9) + 1;
+	private int m5y = generator.nextInt(9) + 1;
+	private int m6x = generator.nextInt(9) + 1;
+	private int m6y = generator.nextInt(9) + 1;
+	private int m7x = generator.nextInt(9) + 1;
+	private int m7y = generator.nextInt(9) + 1;
+	private int m8x = generator.nextInt(9) + 1;
+	private int m8y = generator.nextInt(9) + 1;
+	private int m9x = generator.nextInt(9) + 1;
+	private int m9y = generator.nextInt(9) + 1;
+	private int m10x = generator.nextInt(9) + 1;
+	private int m10y = generator.nextInt(9) + 1;
 	public void mousePressed(MouseEvent e) {
 		switch (e.getButton()) {
 		case 1:        //Left mouse button
