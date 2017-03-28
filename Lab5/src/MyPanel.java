@@ -198,7 +198,7 @@ public class MyPanel extends JPanel {
 			g.setColor(Color.YELLOW);
 			break;
 		case 7:
-			g.setColor(Color.MAGENTA);
+			g.setColor(Color.PINK);
 			break;
 		case 8:
 			g.setColor(Color.WHITE);
